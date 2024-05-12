@@ -15,8 +15,9 @@ func main() {
 	// Initialize a new ServeMux
 	mux := http.NewServeMux()
 
-	// Register the handlers
-	mux.HandleFunc("/user/register", handlers.RegisterHandler)
+	// Define authentication-related API routes
+	mux.HandleFunc("/auth/register", handlers.RegisterHandler)
+	mux.HandleFunc("/auth/login", handlers.LoginHandler)
 
 	// Start the server
 	log.Println("Starting server...")
